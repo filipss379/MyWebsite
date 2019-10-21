@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { MobileMenuComponent } from './mobile.menu.component/mobile.menu.component.component';
+import { MobileMenuComponent } from './mobile.menu/mobile.menu.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { MobileMenuComponent } from './mobile.menu.component/mobile.menu.compone
   imports: [
     RouterModule.forRoot([
      { path: 'home', component: HomeComponent },
-     { path: 'mobile.menu.component', component: MobileMenuComponent},
+     { path: 'mobile.menu', component: MobileMenuComponent},
      { path: '', redirectTo: 'home', pathMatch: 'full'},
      { path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
