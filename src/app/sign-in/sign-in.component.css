@@ -1,0 +1,51 @@
+.userBox {
+    padding-top: 3rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+    height: 500px;
+}
+
+.userBox h1 {
+    padding: .5rem 0 1rem 0;
+    font-size: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.userData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logInButton {
+    background: linear-gradient(#aa0d1c, #ce0e2d, #aa0d1c);
+    color: #fff;
+    height: 5rem;
+    width: 22rem;
+}
+
+.userData p {
+    font-size: .8rem;
+    padding: 0;
+    margin: 0;
+}
+
+.FacebookGoogle {
+    display: flex;
+    /* flex-direction: row; */
+    /* align-items: space-between; */
+    /* justify-content: space-evenly; */
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #ccc;
+}

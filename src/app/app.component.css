@@ -23,8 +23,10 @@ nav {
 }
 
 .logo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     font-size: 1.5rem;  
-    padding: 0;
 }
 
 .navOption {
@@ -32,7 +34,9 @@ nav {
 }
 
 .signIn {
-    box-sizing: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
 
 p {
@@ -50,15 +54,26 @@ p {
     border-left: 1px solid #333;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}   
+
+.link {
+    height: 7rem;
+}
+
 .navOption:hover,
 .signIn:hover,
-.menu:hover {
+.menu:hover,
+a:hover {
     background: #121212;
     cursor: pointer;
     color: #ce0e2d;
     transition: all .35s ease-in-out;
 }
-
 
 @media (max-width: 950px) {
 
@@ -67,8 +82,8 @@ p {
         height: 5rem;
     }
 
-    .logo {
-        padding: .5rem 0 0 2rem;
+    .logo .link {
+        padding-left: 2rem;
         align-items: start;
     }
 
@@ -86,24 +101,14 @@ p {
         grid-template-rows: 1fr;
     }
 
-    .menu a {
-        text-decoration: none;
-        color: #fff;
-    }
-
     .link {
         height: 5rem;
-    }
-
-    .link:hover {
-   color: #ce0e2d;
-
     }
 }
 
 @media (max-width: 650px) {
 
-    .logo {
+    .logo .link{
         padding-left: 1.5rem;
     }
 }

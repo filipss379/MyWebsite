@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-
-  pageTitle: string = "All about DRUMS";
-
   constructor() { }
 
 }

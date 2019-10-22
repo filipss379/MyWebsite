@@ -14,4 +14,8 @@ export class AppComponent {
     this.clickedMenu = !this.clickedMenu;
   }
 
+  goHome(): void {
+    if(this.clickedMenu) this.clickedMenu = !this.clickedMenu;
+  }
+
 }

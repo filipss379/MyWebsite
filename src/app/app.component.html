@@ -1,8 +1,12 @@
 <header>
     <nav>
 
-        <div class="shared logo">LOGO</div>
-
+        <div class="shared logo" (click)="goHome()">
+            <a [routerLink]="['./home']">
+                <div class="shared link">LOGO</div>
+            </a>
+        </div>
+        
         <div class="shared navOption">
             <i class="fa fa-shopping-cart"></i>
             <p>Products</p>
@@ -32,10 +36,14 @@
             <i class="fa fa-envelope"></i>
             <p>Newsletter</p>
         </div>
-
+        
         <div class="shared signIn">
-            <i class="fa fa-user"></i>
-            <p>Sign In</p>
+            <a [routerLink]="['./sign-in']">
+                <div class="shared link">
+                    <i class="fa fa-user"></i>
+                    <p>Sign In</p>
+                </div>
+            </a>
         </div>
 
 
