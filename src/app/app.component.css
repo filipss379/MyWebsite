@@ -75,7 +75,7 @@ a:hover {
     transition: all .35s ease-in-out;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 850px) {
 
     nav {
         grid-template-columns: 5fr 2fr 2fr;
