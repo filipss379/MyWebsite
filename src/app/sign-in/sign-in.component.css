@@ -1,0 +1,116 @@
+.userBox {
+    padding-top: 3rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+    height: 500px;
+}
+
+.userData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logInForm {
+    display: grid;
+    grid-template-columns: 20rem;
+    grid-template-rows: 6;
+    
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: .5rem 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fieldLabel {
+    padding-top: .8rem;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    height: 2.2rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.submit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+    padding: .5rem 0 .5rem 0;
+}
+
+.leftELement {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.rightElement {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logInButton {
+    background: linear-gradient(#aa0d1c, #ce0e2d, #aa0d1c);
+    color: #fff;
+    height: 2.5rem;
+    width: 9rem;
+    border: 1px solid #aa0d1c;
+    border-radius: 10px;
+    outline: none;
+}
+
+.info {
+    font-weight: 700;
+    font-size: .8rem;
+    align-self: center;
+}
+
+.alternativeLogIn { 
+    box-sizing: border-box;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    outline:none;
+}
+
+.fbButton { 
+    background: blue;
+    border: 1px solid blue;
+}
+
+.googleButton {
+    border: 1px solid orange;
+    background: orange;
+}
+
+
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #ccc;
+}

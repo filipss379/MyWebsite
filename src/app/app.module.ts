@@ -4,17 +4,23 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { MobileMenuComponent } from './mobile.menu/mobile.menu.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MobileMenuComponent,
+    SignInComponent
   ],
   imports: [
     RouterModule.forRoot([
      { path: 'home', component: HomeComponent },
-     { path: '', redirectTo: 'home', pathMatch: 'full'},
-     { path: '**', redirectTo: 'home', pathMatch: 'full'}
+     { path: 'mobile.menu', component: MobileMenuComponent },
+     { path: 'sign-in', component: SignInComponent },
+     { path: '', redirectTo: 'home', pathMatch: 'full' },
+     { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]),
     BrowserModule
   ],

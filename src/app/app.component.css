@@ -1,0 +1,114 @@
+:root {
+    font-size: 16px;
+}
+
+nav {
+    background: linear-gradient(#666, #333, #111 ,#000);
+    color: #fff;
+    border-bottom: 1px solid #333;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 3fr repeat(6, 1fr) 2fr;
+    grid-template-rows: 1;
+    height: 7rem;
+}
+
+.shared {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-sizing: inherit;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    font-size: 1.5rem;  
+}
+
+.navOption {
+   border-left: 1px solid #333;
+}
+
+.signIn {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+p {
+    font-size: 0.7rem;
+    padding-top: 0.3rem;
+    margin: 0 !important;
+}
+
+.lastNavOpt {
+    border-right: 1px solid #333;
+}
+
+.menu {
+    display: none;
+    border-left: 1px solid #333;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}   
+
+.link {
+    height: 7rem;
+}
+
+.navOption:hover,
+.signIn:hover,
+.menu:hover,
+a:hover {
+    background: #121212;
+    cursor: pointer;
+    color: #ce0e2d;
+    transition: all .35s ease-in-out;
+}
+
+@media (max-width: 850px) {
+
+    nav {
+        grid-template-columns: 5fr 2fr 2fr;
+        height: 5rem;
+    }
+
+    .logo .link {
+        padding-left: 2rem;
+        align-items: start;
+    }
+
+    .signIn {
+        border-left: 1px solid #333;
+    }
+    
+    .navOption {
+        display: none
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .link {
+        height: 5rem;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .logo .link{
+        padding-left: 1.5rem;
+    }
+}

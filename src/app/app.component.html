@@ -1,6 +1,80 @@
 <header>
-    <nav class="navbar bg-primary">
-        <div style="color: #fff;">AAA</div>
+    <nav>
+
+        <div class="shared logo" (click)="goHome()">
+            <a [routerLink]="['./home']">
+                <div class="shared link">LOGO</div>
+            </a>
+        </div>
+        
+        <div class="shared navOption">
+            <i class="fa fa-shopping-cart"></i>
+            <p>Products</p>
+        </div>
+
+        <div class="shared navOption">
+            <i class="fa fa-graduation-cap"></i>
+            <p>Education</p>
+        </div>
+
+        <div class="shared navOption">
+            <i class="fa fa-users"></i>
+            <p>Drummers</p>
+        </div>
+
+        <div class="shared navOption">
+            <i class="fa fa-edit"></i>
+            <p>Articles</p>
+        </div>
+
+        <div class="shared navOption">
+            <i class="fa fa-history"></i>
+            <p>History</p>
+        </div>
+
+        <div class="shared navOption lastNavOpt">
+            <i class="fa fa-envelope"></i>
+            <p>Newsletter</p>
+        </div>
+        
+        <div class="shared signIn">
+            <a [routerLink]="['./sign-in']">
+                <div class="shared link">
+                    <i class="fa fa-user"></i>
+                    <p>Sign In</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div *ngIf="!clickedMenu" (click)="changeMenuStatus()" class="shared menu">
+            <a [routerLink]="['./mobile.menu']">
+                <div class="shared link">
+                    <i class="fa fa-ellipsis-v"></i>
+                </div>
+            </a>
+        </div>
+
+
+        <div *ngIf="clickedMenu" (click)="changeMenuStatus()" class="shared menu">
+            <a [routerLink]="['./home']">
+                <div class="shared link">
+                    <i class="fa fa-close"></i>
+                </div>
+            </a>
+        </div>
+
     </nav>
 </header>
-<router-outlet></router-outlet>
+
+<main>
+    <article>
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </article>
+</main>
+
+<footer>
+
+</footer>
