@@ -1,5 +1,4 @@
 .userBox {
-    padding-top: 3rem;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -125,6 +124,12 @@ input {
     display: none;
 }
 
+.customAlert {
+    padding-top: .5rem;
+    font-size: .8rem;
+    color: #d72a05;
+}
+
 
 @media (max-width: 850px) {
 
@@ -179,6 +184,5 @@ input {
         align-items: center;
         border-top: 1px solid #ccc;
     }
-
 
 }

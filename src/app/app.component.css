@@ -3,6 +3,8 @@
 }
 
 nav {
+    position: fixed;
+    z-index: 1;
     background: linear-gradient(#666, #333, #111 ,#000);
     color: #fff;
     border-bottom: 1px solid #333;
@@ -11,6 +13,7 @@ nav {
     grid-template-columns: 3fr repeat(6, 1fr) 2fr;
     grid-template-rows: 1;
     height: 7rem;
+    width: 100%;
 }
 
 .shared {
@@ -75,6 +78,10 @@ a:hover {
     transition: all .35s ease-in-out;
 }
 
+section {
+    padding-top: 10rem;
+}
+
 footer {
     height: 12rem;
     background: #000;
@@ -118,6 +125,10 @@ footer {
 
     .link {
         height: 5rem;
+    }
+
+    section {
+        padding-top: 8rem;
     }
 }
 

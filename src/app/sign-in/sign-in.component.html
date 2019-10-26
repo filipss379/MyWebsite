@@ -4,25 +4,47 @@
 
       <div class="header">LOG IN</div>
 
-      <div class="field">
-        <label class="fieldLabel">Login</label>
-        <input type="text">
-      </div>
+      <form [formGroup]="checkoutLogIn">
 
-      <div class="field">
-        <label class="fieldLabel">Password</label>
-        <input type="password">
-      </div>
-
-
-      <div class="submit">
-        <div class="leftElement">
-          <button class="logInButton">Log In</button>
+        <div class="field">
+          <label class="fieldLabel">Login</label>
+          <input type="text" name="emailLogIn" formControlName="emailLogIn">
         </div>
-        <div class="rightElement">
-          <span class="info">Forgot your password?</span>
+
+        <div *ngIf="emailLogIn.invalid && (emailLogIn.dirty || emailLogIn.touched)" class="customAlert">
+          <div *ngIf="emailLogIn.errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="emailLogIn.invalid && !emailLogIn.errors.required">
+            Enter valid email
+          </div>
         </div>
-      </div>
+
+        <div class="field">
+          <label class="fieldLabel">Password</label>
+          <input type="password" formControlName="password">
+        </div>
+
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="customAlert">
+          <div *ngIf="password.errors.required">
+            Password is required.
+          </div>
+          <div *ngIf="password.invalid && !password.errors.required">
+            Password must contains 6 characters
+          </div>
+        </div>
+
+
+        <div class="submit">
+          <div class="leftElement">
+            <button type="submit" class="logInButton" [disabled]="!checkoutLogIn.valid">Log In</button>
+          </div>
+          <div class="rightElement">
+            <span class="info">Forgot your password?</span>
+          </div>
+        </div>
+
+      </form>
 
       <div class="centerElement">
         <span class="info">or</span>
@@ -46,26 +68,63 @@
   </div>
 
   <div class="mobileDivider"></div>
-
   <div class="userData rightForm">
-      <div class="form">
+    <div class="form">
 
-        <div class="header">CREATE AN ACCOUNT</div>
+      <div class="header">CREATE AN ACCOUNT</div>
+
+      <form [formGroup]="checkoutAccountCreate">
 
         <div class="field">
           <label class="fieldLabel">First Name</label>
-          <input type="text">
+          <input type="text" formControlName="firstName">
+        </div>
+
+        
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="customAlert">
+            <div *ngIf="firstName.errors.required">
+              First Name is required.
+            </div>
+            <div *ngIf="firstName.errors.minlength && !lastName.errors.required">
+                First Name must contain 2 letters
+              </div>
+            <div *ngIf="firstName.errors.maxlength && !firstName.errors.required">
+              First Name can't containt more than 12 letters
+            </div>
         </div>
 
         <div class="field">
           <label class="fieldLabel">Last Name</label>
-          <input type="text">
+          <input type="text" formControlName="lastName">
+        </div>
+
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="customAlert">
+            <div *ngIf="lastName.errors.required">
+              Last Name is required.
+            </div>
+            <div *ngIf="lastName.errors.minlength && !lastName.errors.required">
+                Last Name must contain 2 letters
+              </div>
+            <div *ngIf="lastName.errors.maxlength && !lastName.errors.required">
+              Last Name can't contatain more than 15 letters
+            </div>
         </div>
 
         <div class="field">
           <label class="fieldLabel">Email</label>
-          <input type="text">
+          <input type="text" formControlName="emailNewUser">
         </div>
+
+        <div *ngIf="emailNewUser.invalid && (emailNewUser.dirty || emailNewUser.touched)" class="customAlert">
+            <div *ngIf="emailNewUser.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="emailNewUser.invalid && !emailNewUser.errors.required">
+              Enter valid email
+            </div>
+          </div>
+
+      </form>
 
         <div class="field">
           <label class="fieldLabel">Password</label>
@@ -79,11 +138,11 @@
 
         <div class="createButtonBox">
           <div class="centerElement">
-            <button class="logInButton">Log In</button>
+            <button class="logInButton">Create Account</button>
           </div>
         </div>
 
-      </div>
     </div>
-
   </div>
+
+</div>
