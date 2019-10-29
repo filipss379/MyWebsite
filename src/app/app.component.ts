@@ -8,14 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   clickedMenu: boolean = false;
+  menuIsCurrentPage: boolean = false;
 
 
   changeMenuStatus(): void {
     this.clickedMenu = !this.clickedMenu;
   }
 
-  goHome(): void {
+  closeMenu(): void {
     if(this.clickedMenu) this.clickedMenu = !this.clickedMenu;
   }
+
 
 }

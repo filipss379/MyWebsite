@@ -4,25 +4,52 @@
 
       <div class="header">LOG IN</div>
 
-      <div class="field">
-        <label class="fieldLabel">Login</label>
-        <input type="text">
-      </div>
+      <form [formGroup]="checkoutLogIn">
 
-      <div class="field">
-        <label class="fieldLabel">Password</label>
-        <input type="password">
-      </div>
-
-
-      <div class="submit">
-        <div class="leftElement">
-          <button class="logInButton">Log In</button>
+        <div class="field">
+          <label class="fieldLabel">Login</label>
+          <input type="text" name="emailLogIn" formControlName="emailLogIn">
         </div>
-        <div class="rightElement">
-          <span class="info">Forgot your password?</span>
+
+        <div *ngIf="emailLogIn.invalid && (emailLogIn.dirty || emailLogIn.touched)" class="customAlert">
+          <div *ngIf="emailLogIn.errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="emailLogIn.invalid && !emailLogIn.errors.required">
+            Enter valid email
+          </div>
         </div>
-      </div>
+
+        <div class="field">
+          <label class="fieldLabel">Password</label>
+          <i [class]=" hidePasswordLogIn ? 'fa fa-eye-slash' : 'fa fa-eye'" (click)="showPasswordLogIn()"></i>
+          <input [type]="hidePasswordLogIn ? 'password' : 'text'" name="passwordLogIn" formControlName="passwordLogIn" maxlength="12">
+        </div>
+
+        <div *ngIf="passwordLogIn.invalid && (passwordLogIn.dirty || passwordLogIn.touched)" class="customAlert">
+          <div *ngIf="passwordLogIn.errors.required">
+            Password is required.
+          </div>
+          <div *ngIf="passwordLogIn.errors.minlength && !passwordLogIn.errors.required">
+            Password must contains 6 characters
+          </div>
+          <div *ngIf="passwordLogIn.errors.maxlength && !passwordLogIn.errors.required">
+              Password cannot contain more than 6 characters
+            </div>
+        </div>
+
+
+        <div class="submit">
+          <div class="leftElement">
+            <button type="submit" [class]="checkoutLogIn.valid ?  'logInButton' : 'logInButton disabledButton'"
+              [disabled]="!checkoutLogIn.valid">Log In</button>
+          </div>
+          <div class="rightElement">
+            <span class="info">Forgot your password?</span>
+          </div>
+        </div>
+
+      </form>
 
       <div class="centerElement">
         <span class="info">or</span>
@@ -46,44 +73,106 @@
   </div>
 
   <div class="mobileDivider"></div>
-
   <div class="userData rightForm">
-      <div class="form">
+    <div class="form">
 
-        <div class="header">CREATE AN ACCOUNT</div>
+      <div class="header">CREATE AN ACCOUNT</div>
+
+      <form [formGroup]="checkoutAccountCreate">
 
         <div class="field">
           <label class="fieldLabel">First Name</label>
-          <input type="text">
+          <input type="text" formControlName="firstName">
+        </div>
+
+
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="customAlert">
+          <div *ngIf="firstName.errors.required">
+            First Name is required.
+          </div>
+          <div *ngIf="firstName.errors.minlength && !lastName.errors.required">
+            First Name must contain 2 letters
+          </div>
+          <div *ngIf="firstName.errors.maxlength && !firstName.errors.required">
+            First Name can't containt more than 12 letters
+          </div>
         </div>
 
         <div class="field">
           <label class="fieldLabel">Last Name</label>
-          <input type="text">
+          <input type="text" formControlName="lastName">
+        </div>
+
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="customAlert">
+          <div *ngIf="lastName.errors.required">
+            Last Name is required.
+          </div>
+          <div *ngIf="lastName.errors.minlength && !lastName.errors.required">
+            Last Name must contain 2 letters
+          </div>
+          <div *ngIf="lastName.errors.maxlength && !lastName.errors.required">
+            Last Name can't contatain more than 15 letters
+          </div>
         </div>
 
         <div class="field">
           <label class="fieldLabel">Email</label>
-          <input type="text">
+          <input type="text" formControlName="emailNewUser">
         </div>
+
+        <div *ngIf="emailNewUser.invalid && (emailNewUser.dirty || emailNewUser.touched)" class="customAlert">
+          <div *ngIf="emailNewUser.errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="emailNewUser.invalid && !emailNewUser.errors.required">
+            Enter valid email
+          </div>
+        </div>
+
+      </form>
+
+      <form #f="ngForm">
 
         <div class="field">
           <label class="fieldLabel">Password</label>
-          <input type="password">
+          <i [class]=" hidePasswordCreate ? 'fa fa-eye-slash' : 'fa fa-eye'" (click)="showPasswordCreate()"></i>
+          <input [type]="hidePasswordCreate ? 'password' : 'text'" name="passwordAccountCreate" ngModel 
+                 #passwordAccountCreate="ngModel" minlength="6" maxlength="12" required (focusout)="getAccountCreatePassword($event)">
+        </div>
+
+        <div *ngIf="passwordAccountCreate.invalid && (passwordAccountCreate.dirty || passwordAccountCreate.touched)" class="customAlert">
+            <div *ngIf="passwordAccountCreate.errors.required">
+              Password is required.
+            </div>
+            <div *ngIf="passwordAccountCreate.errors.minlength && !passwordAccountCreate.errors.required">
+              Password must contains 6 characters
+            </div>
         </div>
 
         <div class="field">
           <label class="fieldLabel">Confirm Password</label>
-          <input type="password">
+          <i [class]=" hideConfirmPasswordCreate ? 'fa fa-eye-slash' : 'fa fa-eye'"
+            (click)="showConfirmPasswordCreate()"></i>
+          <input [type]="hideConfirmPasswordCreate ? 'password' : 'text'" name="confirmPassword" ngModel #confirmPassword="ngModel" 
+                 confirmEqualValidator="passwordAccountCreate" required (focusout)=" getConfirmPassword($event)">
         </div>
 
-        <div class="createButtonBox">
-          <div class="centerElement">
-            <button class="logInButton">Log In</button>
+        <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="customAlert">
+          <div *ngIf="confirmPassword.errors['confirmEqualValidator']">
+            Confirm password does not match
           </div>
         </div>
 
-      </div>
-    </div>
+      </form>
 
+        <div class="createButtonBox">
+          <div class="centerElement">
+            <button type="submit" [class]="checkoutAccountCreate.valid && passwordAccountCreate.valid && confirmPassword.valid ?  'logInButton' : 'logInButton disabledButton'"
+              [disabled]="!checkoutAccountCreate.valid">Log In</button>
+          </div>
+        </div>
+
+    </div>
   </div>
+
+</div>

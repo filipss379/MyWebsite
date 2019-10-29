@@ -1,5 +1,4 @@
 .userBox {
-    padding-top: 3rem;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -31,9 +30,11 @@
 }
 
 .field {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+ 
 }
 
 .fieldLabel {
@@ -52,6 +53,13 @@ input {
     color: #666;
     cursor: pointer;
     padding: 5px;
+}
+
+.field i {
+    position: absolute;
+    top: 46px;
+    left: 290px;
+    font-size: 1.3rem;
 }
 
 .submit {
@@ -86,6 +94,11 @@ input {
     border-radius: 10px;
     outline: none;
 }
+
+.disabledButton {
+    opacity: 0.7;
+}
+
 
 .info {
     font-weight: 700;
@@ -123,6 +136,12 @@ input {
 
 .mobileDivider {
     display: none;
+}
+
+.customAlert {
+    padding-top: .5rem;
+    font-size: .8rem;
+    color: #d72a05;
 }
 
 
@@ -180,5 +199,10 @@ input {
         border-top: 1px solid #ccc;
     }
 
+    .field i {
+        font-size: 1.1rem;
+        left: 166px;
+        top: 48px;
+    }
 
 }
