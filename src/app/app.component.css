@@ -23,23 +23,16 @@ nav {
     align-items: center;
     font-size: 2rem;
     box-sizing: inherit;
+    height: 7rem;
+    width: 100%
 }
 
 .logo {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     font-size: 1.5rem;  
 }
 
 .navOption {
-   border-left: 1px solid #333;
-}
-
-.signIn {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    border-left: 1px solid #333;
 }
 
 p {
@@ -58,20 +51,14 @@ p {
 }
 
 a {
+    display: block;
     text-decoration: none;
     color: #fff;
     padding: 0;
     margin: 0;
 }   
 
-.link {
-    height: 7rem;
-}
-
-.navOption:hover,
-.signIn:hover,
-.menu:hover,
-a:hover {
+.shared:hover {
     background: #121212;
     cursor: pointer;
     color: #ce0e2d;
@@ -99,14 +86,13 @@ footer {
         height: 5rem;
     }
 
+    .shared {
+        height: 5rem;
+    }
+
     footer {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 3;
-    }
-
-    .logo .link {
-        padding-left: 2rem;
-        align-items: start;
     }
 
     .signIn {
@@ -118,13 +104,7 @@ footer {
     }
 
     .menu {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
-
-    .link {
-        height: 5rem;
+        display: flex;
     }
 
     section {
@@ -139,7 +119,4 @@ footer {
         grid-template-rows: 3;
     }
 
-    .logo .link {
-        padding-left: 1.5rem;
-    }
 }

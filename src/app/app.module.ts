@@ -8,12 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { MobileMenuComponent } from './mobile.menu/mobile.menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
+import { ConfirmEqualValidatorDirective } from './shared/confirm-password.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MobileMenuComponent,
-    SignInComponent
+    SignInComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     RouterModule.forRoot([
@@ -25,7 +28,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     ]),
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
