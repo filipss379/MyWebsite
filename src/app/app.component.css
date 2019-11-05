@@ -67,17 +67,16 @@ a {
 
 section {
     padding-top: 10rem;
+    background: #fff;
 }
 
 footer {
     height: 12rem;
-    background: #000;
+    background-color: #000;
     color: #fff;
     display: grid;
-    grid-template-columns: repeat(3, 1fr) 2fr
+    grid-template-columns: repeat(3, 1fr) 2fr;
 }
-
-
 
 @media (max-width: 850px) {
 

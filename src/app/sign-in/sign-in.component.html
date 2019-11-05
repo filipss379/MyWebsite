@@ -7,7 +7,7 @@
       <form [formGroup]="checkoutLogIn">
 
         <div class="field">
-          <label class="fieldLabel">Login</label>
+          <label class="fieldLabel">Email</label>
           <input type="text" name="emailLogIn" formControlName="emailLogIn">
         </div>
 
@@ -37,7 +37,6 @@
               Password cannot contain more than 6 characters
             </div>
         </div>
-
 
         <div class="submit">
           <div class="leftElement">
@@ -167,8 +166,11 @@
 
         <div class="createButtonBox">
           <div class="centerElement">
-            <button type="submit" [class]="checkoutAccountCreate.valid && passwordAccountCreate.valid && confirmPassword.valid ?  'logInButton' : 'logInButton disabledButton'"
-              [disabled]="!checkoutAccountCreate.valid">Log In</button>
+            <button type="submit" [class]="checkoutAccountCreate.valid && passwordAccountCreate.valid && 
+                    confirmPassword.valid ?  'logInButton' : 'logInButton disabledButton'"
+                    [disabled]="!checkoutAccountCreate.valid">
+              Log In
+            </button>
           </div>
         </div>
 
