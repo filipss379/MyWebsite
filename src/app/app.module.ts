@@ -2,13 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MobileMenuComponent } from './mobile.menu/mobile.menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
-import { ConfirmEqualValidatorDirective } from './shared/confirm-password.directive';
+import { ConfirmEqualValidatorDirective } from './sign-in/confirm-password.directive';
+import { UserService } from './services/user.service';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +31,11 @@ import { ConfirmEqualValidatorDirective } from './shared/confirm-password.direct
     ]),
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
